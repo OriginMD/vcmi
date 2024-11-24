@@ -35,6 +35,21 @@ Once you have installed VCMI and have the launcher opened, select Settings on th
 
 Together, the two options should eliminate black bars and enable full screen VCMI experience. Enjoy!
 
+## Step 4: Keep your Alternative Store updated
+
+- Every 7 days you need to open Alt Store or the alternative and click Update App on both VCMI and the store
+
+In the event that you don't update the store in the alloted time, it won't load. Reloading the store is easy enough. Simply
+
+- Connect you iOS device to your PC/MAC
+- Complete step 9 of the AltStore Manual (trust your Apple ID) again
+- Install Altstore on your device
+- Update VCMI and play as normal
+
+![image](https://github.com/user-attachments/assets/836c9a2e-7830-46eb-ab54-ef9dbb34c8f4)
+
+You do not need to delete any files on your PC/MAC/iOS device or reboot anything to revive the Alt store or VCMI.
+
 ## Alternative Step 1: Download and install VCMI
 
 - The latest release (recommended): <https://github.com/vcmi/vcmi/releases/latest>

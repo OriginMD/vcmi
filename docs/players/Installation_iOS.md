@@ -6,85 +6,91 @@ You can run VCMI on iOS 12.0 and later, all devices are supported. If you wish t
 
 The easiest and recommended way to install on a non-jailbroken device is to install the [AltStore Classic](https://altstore.io/) or [Sideloadly](https://sideloadly.io/). We will use AltStore as an example below. Using this method means the VCMI certificate is auto-signed automatically.
 
-i) Use [AltStore Windows](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) or [AltStore macOS](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) instructions to install the store depending on the operating system you are using. 
+a) Install AltStore
+Follow the official instructions for your operating system:
+- [AltStore Windows Classic](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows)
+- [AltStore macOS](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos)
 
-If you're having trouble enabling "sync with this iOS device over Wi-Fi" press on the rectangular shape below "Account". Example shown below.
+**Troubleshooting Tip:** If you encounter issues enabling "Sync with this iOS device over Wi-Fi," click the rectangular icon under "Account" in iTunes. See the example below:
 
-![image](https://github.com/user-attachments/assets/74fe2ca2-b55c-4b05-b083-89df604248f3)
+![iTunes](https://vcmi.eu/players/images/itunes.jpg)
 
-ii) Download the VCMI-iOS.ipa file on your iOS device directly from the [latest releases](https://github.com/vcmi/vcmi/releases/latest).
+b) Download the VCMI-iOS.ipa file on your iOS device directly from the [latest releases](https://github.com/vcmi/vcmi/releases/latest).
 
-iii) To install the .ipa file on your device do one of the following:
-
-- In AltStore go to >My Apps > press + in the top left corner. Select VCMI-iOS.ipa to install,
-- or drag and drop the .ipa file into your iOS device in iTunes
-
+c) Install the IPA File
+To install the IPA file, choose one of the following methods:
+- In AltStore:
+  1. Go to **My Apps**.
+  2. Press the **+** button in the top-left corner.
+  3. Select `VCMI-iOS.ipa` to install.
+- Alternatively, drag and drop the IPA file into your iOS device using iTunes.
 
 ## Step 2: Installing Heroes III data files
 
-If you bought HoMM3 on [GOG](https://www.gog.com/de/game/heroes_of_might_and_magic_3_complete_edition), you can download the files directly from the browser in the device. 
+d) If you purchased HoMM3 on [GOG](https://www.gog.com/de/game/heroes_of_might_and_magic_3_complete_edition), you can download the required files directly on your device.
 
-Launch VCMI app on the device and the launcher will prompt two files to complete the installation. Select the **.bin** file first, then the **.exe** file. This may take a few seconds. Please be patient. 
+![image](https://github.com/user-attachments/assets/8fef1026-9db6-418b-adc9-0bcd39e93adf)
 
+e) Launch the VCMI app on your device. The launcher will prompt you to upload two files to complete the installation.
+
+f) First, select the **.bin** file, then select the **.exe** file.
+
+![image](https://github.com/user-attachments/assets/9a02a76f-bb2e-45ad-b2fe-ffd97112021f)
+
+g) The process may take a few seconds. Please be patient.
 
 ## Step 3: Configuration settings
-Once you have installed VCMI and have the launcher opened, select Settings on the left bar. The following Video settings are recommended:
+e) After installing VCMI, open the launcher and go to **Settings** in the left sidebar. Adjust the following video settings for the best experience:
 
-- Lower reserved screen area to zero.
-- Increase interface Scaling to maximum. This number will depend on your device. For 11" iPad Air it was at 273% as an example
+- Set **Reserved Screen Area** to **0%**.
+- Increase **Interface Scaling** to the maximum value suitable for your device (e.g., 273% for an 11" iPad Air).
+- Set **Upscaling filter** to **xBRZ x2** if not selected by default. This will enable the VCMI HD upscaling that is similar in effect to HOMM3 HD mod. Higher xBRZ selections may tank your iOS device perfomance without providing a tangible benefit.
 
-Together, the two options should eliminate black bars and enable full screen VCMI experience. Enjoy!
+These settings will eliminate black bars and enable a full-screen VCMI experience. Enjoy!
 
-## Step 4: Keep your Alternative Store updated
+## Alternative Step 1: Download and Install VCMI
 
-- Every 7 days you need to open Alt Store or the alternative and click Update App on both VCMI and the store
+- **Latest Release (Recommended):** <https://github.com/vcmi/vcmi/releases/latest>
+- **Daily Builds:** <https://builds.vcmi.download/branch/develop/iOS/>
 
-In the event that you don't update the store in the alloted time, it won't load. Reloading the store is easy enough. Simply
+To run on a non-jailbroken device, you need to sign the IPA file. Here are your options:
 
-- Connect you iOS device to your PC/MAC
-- Complete step 9 of the AltStore Manual (trust your Apple ID) again
-- Install Altstore on your device
-- Update VCMI and play as normal
+- **For iOS 14.0–15.4.1:** Use [TrollStore](https://github.com/opa334/TrollStore).
+- **Sign with a Tool:** Use the [iOS App Signer](https://dantheman827.github.io/ios-app-signer/) and refer to this [Kodi guide](https://forum.kodi.tv/showthread.php?tid=245978) (the process is similar).
+- **Create Signing Assets on macOS:** Follow [this guide](https://github.com/kambala-decapitator/xcode-auto-signing-assets). Replace `your.bundle.id` with a unique identifier, such as `com.MY-NAME.vcmi`.
+- **Sign on Any OS:** Use [Rust](https://github.com/indygreg/PyOxidizer/tree/main/tugger-code-signing) or an [alternative project in C++](https://github.com/zhlynn/zsign). Note: You will need signing assets (a private key and provisioning profile).
 
-![image](https://github.com/user-attachments/assets/836c9a2e-7830-46eb-ab54-ef9dbb34c8f4)
+### Installing the IPA File
+- In AltStore: Go to **My Apps**, press the **+** button, and select `VCMI-iOS.ipa` to install.
+- Using iTunes: Drag and drop the IPA file into your iOS device.
 
-You do not need to delete any files on your PC/MAC/iOS device or reboot anything to revive the Alt store or VCMI.
+Alternatively, use Xcode or Apple Configurator (available for free on the Mac App Store). Apple Configurator also allows command-line installations. Here’s an example:
 
-## Alternative Step 1: Download and install VCMI
+```sh
+/Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil install-app ~/Desktop/vcmi.ipa
+```
 
-- The latest release (recommended): <https://github.com/vcmi/vcmi/releases/latest>
-- Daily builds: <https://builds.vcmi.download/branch/develop/iOS/>
+## Alternative Step 2: Installing Heroes III Data Files
 
-To run on a non-jailbroken device you need to sign the IPA file, you have the following aternative options:
+**Note:** To save space and time, you can skip downloading the `VIDEO.VID` file from the **Data** folder if you don’t need in-game videos. You can also skip the **Mp3** directory.
 
-- if you're on iOS 14.0-15.4.1, you can try <https://github.com/opa334/TrollStore>. 
-- Get signer tool [here](https://dantheman827.github.io/ios-app-signer/) and a guide [here](https://forum.kodi.tv/showthread.php?tid=245978) (it's for Kodi, but the logic is the same). Signing with this app can only be done on macOS.
-- [Create signing assets on macOS from terminal](https://github.com/kambala-decapitator/xcode-auto-signing-assets). In the command replace `your.bundle.id` with something like `com.MY-NAME.vcmi`. After that use the above signer tool.
-- [Sign from any OS (Rust)](https://github.com/indygreg/PyOxidizer/tree/main/tugger-code-signing) / [alternative project (C++)](https://github.com/zhlynn/zsign). You'd still need to find a way to create signing assets (private key and provisioning profile) though.
+### Step 2.a: Using Finder or Windows Explorer
 
-The easiest way to install the ipa on your device is to do one of the following:
+1. Upload the following directories to your device:
+   - **Data**
+   - **Maps**
+   - **Mp3** (optional)
 
-- In AltStore go to >My Apps > press + in the top left corner. Select VCMI-iOS.ipa to install or
+2. Use Finder (macOS) or iTunes (Windows/macOS 10.14 or earlier). Mods can also be added by uploading the **Mods** directory.
 
-- Drag and drop the .ipa file into your iOS device in iTunes
+3. Follow [Apple’s guide](https://support.apple.com/en-us/HT210598) to place the files into the VCMI app. **Finder does not display copy progress**, so wait about 10 minutes for the process to finish.
 
-Alternatively, to install the signed ipa on your device, you can use Xcode or Apple Configurator (available on the Mac App Store for free). The latter also allows installing ipa from the command line, here's an example that assumes you have only 1 device connected to your Mac and the signed ipa is on your desktop:
+### Step 2.b: Using the Files App
 
-    /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil install-app ~/Desktop/vcmi.ipa
+If the data files are on your iOS device (e.g., in a shared folder), copy them directly using the **Files** app.
 
-## Alternative Step 2: Installing Heroes III data files
-
-Note: if you don't need in-game videos, you can omit downloading/copying file VIDEO.VID from the Data folder - it will save your time and space. The same applies to the Mp3 directory.
-
-### Step 2.a: Installing data files with Finder or Windows explorer
-
-To play the game, you need to upload HoMM3 data files - **Data**, **Maps** and **Mp3** directories - to the device. Use Finder (or iTunes, if you're on Windows or your macOS is 10.14 or earlier) for that. You can also add various mods by uploading **Mods** directory. Follow [official Apple guide](https://support.apple.com/en-us/HT210598) and place files into VCMI app. Unfortunately, Finder doesn't display copy progress, give it about 10 minutes to finish.
-
-### Step 2.b: Installing data files using iOS device only
-
-If you have data somewhere on device or in shared folder or you have downloaded it, you can copy it directly on your iPhone/iPad using Files application.
-
-Place **Data**, **Maps** and **Mp3** folders into vcmi application - it will be visible in Files along with other applications' folders.
+1. Place the **Data**, **Maps**, and **Mp3** folders into the VCMI application folder.
+2. The VCMI app folder will appear alongside other app folders in the **Files** app.
 
 ### Step 2.c: Installing data files with Xcode on macOS
 
@@ -107,6 +113,28 @@ You can also upload files with Xcode. You need to prepare "container" for that.
 - Tap in the bottom area (status bar): activate chat/console in the game
 
 You can start game directly (avoiding the launcher) by changing setting in iOS Settings app - VCMI.
+
+## Troubleshooting: Keeping your Alternative Store updated
+
+Every 7 days you need to open Alt Store or the alternative. Clicking Update All or click Update App on both VCMI and the store separately works
+
+If you iTunes does not connect to your device over WiFi despite enabling the Sync over WiFi option, do the following on PC:
+a) Search for ‘cmd’. Right click on it and ‘Run as administrator’.
+b) Copy the command below. It stops the ‘Apple Mobile Device service’.
+-     net stop "Apple Mobile Device Service"
+c) Copy the command below and restart the ‘Apple Mobile Device Service’.
+-     net start "Apple Mobile Device Service"
+
+In the event that you don't update the store in the alloted time and it expires, it won't load. Reloading the store is easy enough. Simply
+
+- Connect you iOS device to your PC/MAC
+- Complete step 9 of the AltStore Manual (trust your Apple ID) again
+- Install Altstore on your device
+- Update VCMI and play as normal
+
+![image](https://github.com/user-attachments/assets/836c9a2e-7830-46eb-ab54-ef9dbb34c8f4)
+
+You do not need to delete any files on your PC/MAC/iOS device or reboot anything to revive the Alt store or VCMI.
 
 ## Reporting bugs
 
